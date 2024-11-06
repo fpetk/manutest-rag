@@ -1,0 +1,23 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: manutest-rag-gitlab 
+  description: Secure Supply Chain Example for RAG Chatbot Application   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:
+    # ArgoCD apps from this template used rhtap-gitops as the grouping
+    argocd/app-selector: rhtap/gitops=manutest-rag-gitlab  
+    janus-idp.io/tekton: manutest-rag-gitlab 
+    backstage.io/kubernetes-id: manutest-rag-gitlab 
+    backstage.io/techdocs-ref: dir:. 
+    quay.io/repository-slug: tpetkos/manutest-rag
+  tags: ["ai", "llamacpp", "vllm", "python", "rag", "database"] 
+spec:
+  type: service
+  owner: user:guest 
+  lifecycle: experimental
+ 
